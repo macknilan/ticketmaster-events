@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Roboto Mono Regular";
+  src: url("./assets/fonts/RobotoMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono Bold";
+  src: url("./assets/fonts/RobotoMono-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono Italic";
+  src: url("./assets/fonts/RobotoMono-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono Medium";
+  src: url("./assets/fonts/RobotoMono-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono BoldItalic";
+  src: url("./assets/fonts/RobotoMono-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono ExtraLight";
+  src: url("./assets/fonts/RobotoMono-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono ExtraLightItalic";
+  src: url("./assets/fonts/RobotoMono-ExtraLightItalic.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono Light";
+  src: url("./assets/fonts/RobotoMono-Light.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono LightItalic";
+  src: url("./assets/fonts/RobotoMono-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono MediumItalic";
+  src: url("./assets/fonts/RobotoMono-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono SemiBold";
+  src: url("./assets/fonts/RobotoMono-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono SemiBoldItalic";
+  src: url("./assets/fonts/RobotoMono-SemiBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono Thin";
+  src: url("./assets/fonts/RobotoMono-Thin.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Mono ThinItalic";
+  src: url("./assets/fonts/RobotoMono-ThinItalic.ttf");
+}
+
+@layer base {
+  html {
+    font-family: "Roboto Mono Regular";
+  }
+}
