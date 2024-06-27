@@ -1,4 +1,5 @@
-//
+// COMPONENT FOR SHOW THE LIST OF EVENTS(SHOWS IN TICKETMASTER)
+
 import { useState } from "react";
 import eventJson from "../../../services/events.json";
 import EventItem from "./EventItem";
@@ -9,16 +10,18 @@ const Events = ({ searchTerm }) => {
 
   // _embedded: { events } - THIS PART IS SAYING "GO INTO THE _embedded PROPERTY OF THE DATA OBJECT, AND THEN GO INTO ITS EVENTS PROPERTY".
   // HOLDS THE VALUE OF ``
+  // const events = data._embedded.events;
   const {
     _embedded: { events },
   } = data;
 
-  const handleEventItemClick = (id) => {
+  const handleOnEventItemClick = (id) => {
     // FUNCTION TO HANDLE THE EVENT ITEM CLICK
-    console.log("clicked handleEventItemClick -> ", id);
+    console.log("clicked handleOnEventItemClick -> ", id);
   };
 
   const renderEvents = () => {
+    // FUNCTION FOR FILTER THE EVENTS BY SEARCH TERM AND RENDER THE EVENTS
     let eventsFiltered = events;
     if (searchTerm.length > 0) {
       eventsFiltered = eventsFiltered.filter((item) =>
@@ -32,7 +35,7 @@ const Events = ({ searchTerm }) => {
         info={eventItem.info}
         name={eventItem.name}
         image={eventItem.images[0].url}
-        onEventClick={handleEventItemClick}
+        onEventClick={handleOnEventItemClick}
         id={eventItem.id}
       />
     ));

@@ -5,12 +5,13 @@ import { useState } from "react";
 const SearchEventItem = ({ onSearch }) => {
   const [search, setSearch] = useState("");
 
-  const handleInputChange = (evt) => {
+  const handleInputOnChange = (evt) => {
+    // FUNCTION TO HANDLE THE INPUT CHANGE
     setSearch(evt.target.value);
   };
-  console.log(`searching in handleInputChange -> ${search}`);
+  console.log(`searching in handleInputOnChange -> ${search}`);
 
-  const handleInputKeyDown = (evt) => {
+  const handleInputOnKeyDown = (evt) => {
     // FUNCTION TO HANDLE THE ENTER KEY PRESS
     console.log(evt);
     if (evt.key === "Enter") {
@@ -36,8 +37,8 @@ const SearchEventItem = ({ onSearch }) => {
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
               placeholder="Busca tu evento favorito"
               required
-              onChange={handleInputChange}
-              onKeyDown={handleInputKeyDown}
+              onChange={handleInputOnChange}
+              onKeyDown={handleInputOnKeyDown}
               value={search}
             />
           </div>
