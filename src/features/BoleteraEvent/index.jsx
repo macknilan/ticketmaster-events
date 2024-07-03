@@ -8,7 +8,7 @@ const BoleteraEventFeature = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchEventItem = (termFromOnSearch) => {
-    // FUNCTION TO HANDLE THE ENTER KEY PRESS
+    // FUNCTION TO HANDLE WHEN ENTER KEY IS PRESSED
     console.log(`clicked searchTerm -> ${searchTerm}`);
     setSearchTerm(termFromOnSearch);
   };

@@ -1,19 +1,14 @@
 // COMPONENT FOR SHOW THE LIST OF EVENTS(SHOWS IN TICKETMASTER)
 
-import { useState } from "react";
-import eventJson from "../../../services/events.json";
+import { faBomb, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import useEventsData from "../../../hooks/UseEventsData";
 import EventItem from "./EventItem";
 
 const Events = ({ searchTerm }) => {
   // EVENTS COMPONENT
-  const [data, setData] = useState(eventJson);
-
-  // _embedded: { events } - THIS PART IS SAYING "GO INTO THE _embedded PROPERTY OF THE DATA OBJECT, AND THEN GO INTO ITS EVENTS PROPERTY".
-  // HOLDS THE VALUE OF ``
-  // const events = data._embedded.events;
-  const {
-    _embedded: { events },
-  } = data;
+  const { events, loading, error } = useEventsData();
 
   const handleOnEventItemClick = (id) => {
     // FUNCTION TO HANDLE THE EVENT ITEM CLICK
@@ -40,6 +35,24 @@ const Events = ({ searchTerm }) => {
       />
     ));
   };
+
+  // RENDE CONDICIONAL
+  if (error) {
+    return (
+      <div>
+        <FontAwesomeIcon icon={faBomb} style={{ color: "#ff0000" }} />A ocurrido
+        un error: {error.message}
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div>
+        <FontAwesomeIcon icon={faSpinner} spin />
+      </div>
+    );
+  }
 
   return (
     <div>
