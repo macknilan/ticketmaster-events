@@ -1,8 +1,8 @@
 // COMPONENT FOR THE SEARCH INPUT
 
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 
-const SearchEventItem = ({ onSearch }) => {
+const SearchEventItem = forwardRef(({ onSearch }, ref) => {
   const [search, setSearch] = useState("");
 
   const handleInputOnChange = (evt) => {
@@ -21,7 +21,7 @@ const SearchEventItem = ({ onSearch }) => {
   };
 
   return (
-    <div className="m-2">
+    <div className="m-2" ref={ref}>
       <div className="max-w-screen-md px-4 py-8 mx-auto lg:py-16">
         <form action="#" className="space-y-8">
           <div>
@@ -46,6 +46,8 @@ const SearchEventItem = ({ onSearch }) => {
       </div>
     </div>
   );
-};
+});
+
+SearchEventItem.displayName = "SearchEventItem";
 
 export default SearchEventItem;
