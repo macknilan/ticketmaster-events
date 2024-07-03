@@ -1,6 +1,6 @@
 // COMPONENT FOR THE SEARCH INPUT
 
-import { forwardRef, useState } from "react";
+import { forwardRef, useImperativeHandle, useState } from "react";
 
 const SearchEventItem = forwardRef(({ onSearch }, ref) => {
   const [search, setSearch] = useState("");
@@ -19,6 +19,11 @@ const SearchEventItem = forwardRef(({ onSearch }, ref) => {
       onSearch(search);
     }
   };
+
+  // HOOK QUE PERMITE EXPONER VALORES/PROPIEDADES COMPONENTE PADRE
+  useImperativeHandle(ref, () => ({
+    search, // SE EXPONE EL OBJETO CON LA PROPIEDAD search
+  }));
 
   return (
     <div className="m-2" ref={ref}>

@@ -10,17 +10,19 @@ const BoleteraEventFeature = () => {
 
   const handleSearchEventItem = (termFromOnSearch) => {
     // FUNCTION TO HANDLE WHEN ENTER KEY IS PRESSED
-    console.log(`clicked searchTerm -> ${searchTerm}`);
+    console.log("clicked searchTerm ->", searchTerm);
 
-    console.log("searching in containerInputRef");
-    console.log(containerInputRef.current);
+    console.log("searching in containerInputRef ->", containerInputRef.current);
 
     setSearchTerm(termFromOnSearch);
   };
 
   return (
-    <div className="m-2" ref={containerInputRef}>
-      <SearchEventItem onSearch={handleSearchEventItem} />
+    <div className="m-2">
+      <SearchEventItem
+        onSearch={handleSearchEventItem}
+        ref={containerInputRef}
+      />
       <Events searchTerm={searchTerm} />
     </div>
   );

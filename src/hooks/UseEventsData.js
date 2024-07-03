@@ -22,7 +22,7 @@ const useEventsData = () => {
       } catch (error) {
         setError(error);
       }
-    }, 4000);
+    }, 2000);
   }, []); // ARRAY VACÍO PARA QUE SOLO SE EJECUTE UNA VEZ
 
   return {
